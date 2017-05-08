@@ -1,0 +1,122 @@
+.wizzaro-slider-metabox-slides {
+    padding: 6px 0;
+
+    .wsms-no-elements {
+        //font-size: 18px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .wsms-menu {
+        margin: 12px 0;
+    }
+
+    .wsms-list {
+        margin: 12px 0;
+        border-top: 1px solid get_admin_color( HR Line );
+        border-bottom: 1px solid get_admin_color( HR Line );
+        padding: 12px 0;
+
+        .wsms-l-elem {
+            margin-bottom: 5px;
+            border: 1px solid #dfdfdf;
+            background: #fff;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &.ui-sortable-handle {
+                cursor: move;
+            }
+
+            &.ui-sortable-helper {
+                border-color: get_admin_color( Link Colors );
+            }
+
+            .wsms-l-elem-wrapper {
+                display: table;
+                width: 100%;
+                min-height: 45px;
+                table-layout: fixed;
+
+                .wsms-l-e-select,
+                .wsms-l-e-image,
+                .wsms-l-e-content,
+                .wsms-l-e-actions {
+                    display: table-cell;
+                    padding: 7px;
+                    vertical-align: middle;
+                }
+
+                .wsms-l-e-select {
+                    width: 30px;
+                    text-align: center;
+
+                    a {
+                        display: block;
+                        width: 20px;
+                        height: 20px;
+                        border: 1px solid #dfdfdf;
+                        margin: 0 auto;
+                        line-height: 20px;
+                        text-decoration: none;
+
+                        &:hover {
+                            border-color: get_admin_color( Link Colors, hover );
+                        }
+
+                        span {
+                            display: none;
+                        }
+                    }
+                }
+
+                .wsms-l-e-image {
+                    width: 200px;
+                    text-align: center;
+
+                    img {
+                        display: block;
+                        width: auto;
+                        height: auto;
+                        max-width: 80%;
+                        margin: auto;
+                        margin-bottom: 5px;
+                    }
+
+                }
+
+                .wsms-l-e-content textarea {
+                    width: 100%;
+                }
+
+                .wsms-l-e-actions {
+                    width: 50px;
+                    text-align: center;
+
+                    .wsms-action-delete {
+                        text-decoration: none;
+                        color: get_admin_color( Delete Colors );
+
+                        &:hover {
+                            color: get_admin_color( Delete Colors, hover );
+                        }
+                    }
+                }
+            }
+
+            &.wsms-l-elem-selected .wsms-l-elem-wrapper .wsms-l-e-select span {
+                display: inline;
+            }
+        }
+
+        .wsms-l-elem-placeholder {
+            display: block;
+            width: 100%;
+            height: 34px;
+            border: 1px dashed #dfdfdf;
+            margin-bottom: 5px;
+        }
+    }
+}

@@ -1,0 +1,217 @@
+@charset "UTF-8";
+//Import global
+@import '../../../sass-global/style';
+$carousel-control-color: #ffffff !default;
+$carousel-control-width: 15% !default;
+$carousel-control-opacity: 0.5 !default;
+
+$carousel-indicator-width: 15% !default;
+$carousel-indicator-height: 3px !default;
+$carousel-indicator-spacer: 3px !default;
+$carousel-indicator-active-bg: #ffffff !default;
+
+$carousel-caption-width: 70% !default;
+$carousel-caption-color: #ffffff !default;
+
+$carousel-transition: transform 0.6s linear !default;
+
+// Wrapper for the slide container and indicators
+.wizzaro-slider {
+    position: relative;
+
+    .ws-inner {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .ws-item {
+        display: none;
+        position: relative;
+        width: 100%;
+        min-height: 400px;
+        -webkit-transition: $carousel-transition;
+        -moz-transition: $carousel-transition;
+        -ms-transition: $carousel-transition;
+        -o-transition: $carousel-transition;
+        backface-visibility: hidden;
+        perspective: 1000px;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+        }
+
+        img {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 0;
+            z-index: 0;
+            width: auto;
+            height: auto;
+            min-height: 101%;
+            min-width: 101%;
+            max-width: 1000%;
+            margin: auto;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -ms-transform: translateX(-50%) translateY(-50%);
+            -o-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+    }
+
+    .ws-item-next,
+    .ws-item-prev,
+    .ws-item.active {
+        display: flex;
+    }
+
+    .ws-item-next,
+    .ws-item-prev {
+        position: absolute;
+        top: 0;
+    }
+
+    .ws-item-next.ws-item-left,
+    .ws-item-prev.ws-item-right {
+        transform: translate3d(0, 0, 0);
+    }
+
+    .active.ws-item-right,
+    .ws-item-next {
+        transform: translate3d(100%, 0, 0);
+    }
+
+    .active.ws-item-left,
+    .ws-item-prev {
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    .ws-caption {
+        position: relative;
+        z-index: 2;
+        width: $carousel-caption-width;
+        margin: auto;
+        text-align: center;
+        color: $carousel-caption-color;
+    }
+
+    //
+    // Left/right controls for nav
+    //
+
+    .ws-control-next,
+    .ws-control-prev {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        display: flex; // 1. allow flex styles
+        align-items: center; // 2. vertically center contents
+        justify-content: center; // 3. horizontally center contents
+        width: $carousel-control-width;
+        color: $carousel-control-color;
+        text-align: center;
+        opacity: $carousel-control-opacity;
+        box-shadow: none;
+
+        &:hover, &:focus {
+            text-decoration: none;
+            outline: 0;
+            opacity: 1;
+            box-shadow: none;
+            color: $carousel-control-color;
+        }
+    }
+
+    .ws-control-prev {
+        left: 0;
+    }
+
+    .ws-control-next {
+        right: 0;
+    }
+
+    // Optional indicator pips
+
+    .ws-indicators {
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+        left: 0;
+        z-index: 15;
+        display: flex;
+        justify-content: center;
+        padding-left: 0; // override <ol> default
+        // Use the .ws-control's width as margin so we don't overlay those
+        margin-right: $carousel-control-width;
+        margin-left: $carousel-control-width;
+        list-style: none;
+
+        li {
+            position: relative;
+            flex: 1 0 auto;
+            max-width: $carousel-indicator-width;
+            height: $carousel-indicator-height;
+            margin-right: $carousel-indicator-spacer;
+            margin-left: $carousel-indicator-spacer;
+            text-indent: -999px;
+            cursor: pointer;
+            background-color: rgba($carousel-indicator-active-bg, .5);
+            // Use pseudo classes to increase the hit area by 10px on top and bottom.
+            &::before {
+                position: absolute;
+                top: -10px;
+                left: 0;
+                display: inline-block;
+                width: 100%;
+                height: 10px;
+                content: "";
+            }
+
+            &::after {
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                display: inline-block;
+                width: 100%;
+                height: 10px;
+                content: "";
+            }
+        }
+
+        .active {
+            background-color: $carousel-indicator-active-bg;
+        }
+    }
+}
+
+@supports ( (object-fit: cover) or (-webkit-object-fit: cover) or (-moz-object-fit: cover) or (-ms-object-fit: cover) or (-o-object-fit: cover) ) {
+    .wizzaro-slider .ws-item img {
+        top: 0;
+        left: 0;
+        width: 101%;
+        height: 101%;
+        max-width: none;
+        min-height: 0;
+        min-width: 0;
+        -webkit-object-fit: cover;
+        -moz-object-fit: cover;
+        -ms-object-fit: cover;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none;
+    }
+}

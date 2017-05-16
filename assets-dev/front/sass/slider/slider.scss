@@ -1,28 +1,67 @@
 @charset "UTF-8";
 //Import global
 @import '../../../sass-global/style';
-$carousel-control-color: #ffffff !default;
-$carousel-control-width: 15% !default;
-$carousel-control-opacity: 0.5 !default;
+@import 'config';
 
-$carousel-indicator-width: 15% !default;
-$carousel-indicator-height: 3px !default;
-$carousel-indicator-spacer: 3px !default;
-$carousel-indicator-active-bg: #ffffff !default;
-
-$carousel-caption-width: 70% !default;
-$carousel-caption-color: #ffffff !default;
-
-$carousel-transition: transform 0.6s linear !default;
-
-// Wrapper for the slide container and indicators
 .wizzaro-slider {
     position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
 
-    .ws-inner {
+    .slick-list {
         position: relative;
         overflow: hidden;
-        width: 100%;
+        display: block;
+        margin: 0;
+        padding: 0;
+
+        &:focus {
+            outline: none;
+        }
+
+        &.dragging {
+            cursor: pointer;
+            cursor: hand;
+        }
+    }
+
+    .slick-track,
+    .slick-list {
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    .slick-track {
+        position: relative;
+        left: 0;
+        top: 0;
+        display: block;
+
+        &:before,
+        &:after {
+            content: "";
+            display: table;
+        }
+
+        &:after {
+            clear: both;
+        }
+
+        .slick-loading & {
+            visibility: hidden;
+        }
     }
 
     .ws-item {
@@ -30,10 +69,6 @@ $carousel-transition: transform 0.6s linear !default;
         position: relative;
         width: 100%;
         min-height: 400px;
-        -webkit-transition: $carousel-transition;
-        -moz-transition: $carousel-transition;
-        -ms-transition: $carousel-transition;
-        -o-transition: $carousel-transition;
         backface-visibility: hidden;
         perspective: 1000px;
 
@@ -67,129 +102,136 @@ $carousel-transition: transform 0.6s linear !default;
             -o-transform: translateX(-50%) translateY(-50%);
             transform: translateX(-50%) translateY(-50%);
         }
-    }
 
-    .ws-item-next,
-    .ws-item-prev,
-    .ws-item.active {
-        display: flex;
-    }
+        &.first,
+        &.slick-slide {
+            display: table;
+            float: left;
+            height: 100%;
+            table-layout: fixed;
 
-    .ws-item-next,
-    .ws-item-prev {
-        position: absolute;
-        top: 0;
-    }
-
-    .ws-item-next.ws-item-left,
-    .ws-item-prev.ws-item-right {
-        transform: translate3d(0, 0, 0);
-    }
-
-    .active.ws-item-right,
-    .ws-item-next {
-        transform: translate3d(100%, 0, 0);
-    }
-
-    .active.ws-item-left,
-    .ws-item-prev {
-        transform: translate3d(-100%, 0, 0);
+            &.dragging img {
+                pointer-events: none;
+            }
+        }
     }
 
     .ws-caption {
+        display: table-cell;
         position: relative;
         z-index: 2;
-        width: $carousel-caption-width;
+        width: 100%;
         margin: auto;
+        padding: $carousel-caption-padding;
         text-align: center;
+        vertical-align: middle;
         color: $carousel-caption-color;
     }
 
-    //
-    // Left/right controls for nav
-    //
+    .slick-arrow.slick-hidden {
+        display: none;
+    }
 
-    .ws-control-next,
-    .ws-control-prev {
+    /* Arrows */
+
+    .slick-prev,
+    .slick-next {
+        display: block;
         position: absolute;
-        top: 0;
-        bottom: 0;
-        display: flex; // 1. allow flex styles
-        align-items: center; // 2. vertically center contents
-        justify-content: center; // 3. horizontally center contents
-        width: $carousel-control-width;
-        color: $carousel-control-color;
-        text-align: center;
-        opacity: $carousel-control-opacity;
-        box-shadow: none;
+        top: 50%;
+        z-index: 2;
+        width: $carousel-navigation-bt-width;
+        height: $carousel-navigation-bt-height;
+        margin: 0;
+        outline: 0;
+        border: 0;
+        background: transparent;
+        padding: 0;
+        margin-top: -( $carousel-navigation-bt-height / 2 );
+        font-size: 0;
+        text-indent: -999px;
 
-        &:hover, &:focus {
-            text-decoration: none;
-            outline: 0;
-            opacity: 1;
-            box-shadow: none;
-            color: $carousel-control-color;
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            width: $carousel-navigation-arrow-size;
+            height: $carousel-navigation-arrow-size;
+            margin-top: -($carousel-navigation-arrow-size / 2);
+            border-top: $carousel-navigation-arrow-thickness solid $carousel-navigation-default-arrow-color;
+            border-right: $carousel-navigation-arrow-thickness solid $carousel-navigation-default-arrow-color;
         }
     }
 
-    .ws-control-prev {
+    .slick-prev {
         left: 0;
+
+        &:before {
+            right: 0;
+            margin-right: -(($carousel-navigation-bt-width - $carousel-navigation-arrow-size) / 2);
+            transform: rotate(-135deg);
+        }
     }
 
-    .ws-control-next {
+    .slick-next {
         right: 0;
+
+        &:before {
+            left: 0;
+            margin-left: -(($carousel-navigation-bt-width - $carousel-navigation-arrow-size) / 2);
+            transform: rotate(45deg);
+        }
     }
 
-    // Optional indicator pips
+    /* Dots */
 
-    .ws-indicators {
+    &.slick-dotted {
+        margin-bottom: 30px;
+    }
+
+    .slick-dots {
+        display: block;
+        overflow: hidden;
         position: absolute;
         right: 0;
-        bottom: 10px;
         left: 0;
+        bottom: 10px;
         z-index: 15;
-        display: flex;
-        justify-content: center;
-        padding-left: 0; // override <ol> default
-        // Use the .ws-control's width as margin so we don't overlay those
-        margin-right: $carousel-control-width;
-        margin-left: $carousel-control-width;
+        border: 0;
+        margin: 0;
+        padding: 0;
         list-style: none;
+        text-align: center;
 
         li {
+            display: inline-block;
             position: relative;
-            flex: 1 0 auto;
-            max-width: $carousel-indicator-width;
-            height: $carousel-indicator-height;
-            margin-right: $carousel-indicator-spacer;
-            margin-left: $carousel-indicator-spacer;
-            text-indent: -999px;
+            margin: 0 $carousel-dots-spacer;
+            padding: 0;
             cursor: pointer;
-            background-color: rgba($carousel-indicator-active-bg, .5);
-            // Use pseudo classes to increase the hit area by 10px on top and bottom.
-            &::before {
-                position: absolute;
-                top: -10px;
-                left: 0;
-                display: inline-block;
-                width: 100%;
-                height: 10px;
-                content: "";
+
+            button {
+                display: block;
+                width: $carousel-dots-width;
+                height: $carousel-dots-height;
+                margin: 0;
+                outline: 0;
+                border: 0;
+                background-color: rgba($carousel-dots-active-bg, .5);
+                padding: 0;
+                font-size: 0;
+                text-indent: -999px;
+                -webkit-border-radius: 0;
+                -moz-border-radius: 0;
+                -ms-border-radius: 0;
+                -o-border-radius: 0;
+                border-radius: 0;
             }
 
-            &::after {
-                position: absolute;
-                bottom: -10px;
-                left: 0;
-                display: inline-block;
-                width: 100%;
-                height: 10px;
-                content: "";
+            &.slick-active button {
+                background-color: $carousel-dots-active-bg;
             }
-        }
-
-        .active {
-            background-color: $carousel-indicator-active-bg;
         }
     }
 }

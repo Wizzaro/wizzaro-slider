@@ -20,6 +20,7 @@ class Shortcode extends AbstractPluginController {
 
     public function action_register_style() {
         wp_register_style( 'wizzaro-slider', $this->_config->get_css_url() . 'slider.css', array(), '1.0.0' );
+        wp_register_script( 'wizzaro-slider', $this->_config->get_js_url() . 'slider.js', array( 'jquery' ), '1.0.0' , true );
     }
 
     public function action_init_shordcode( $post_types_settings ) {
@@ -34,7 +35,7 @@ class Shortcode extends AbstractPluginController {
 
             if ( $post  && $post->post_type && $post->post_type ===  $this->_config->get( 'post_type', 'type' ) ) {
                 wp_enqueue_style( 'wizzaro-slider' );
-                wp_enqueue_script( 'wizzaro-slider', $this->_config->get_js_url() . 'slider.js', array( 'jquery' ), '1.0.0' , true );
+                wp_enqueue_script( 'wizzaro-slider' );
 
                 $settings = $this->_config->get( 'carousel', 'default_settings' );
                 $saved_settings = get_post_meta( $post->ID, '_wizzaro_slider_settings', true );

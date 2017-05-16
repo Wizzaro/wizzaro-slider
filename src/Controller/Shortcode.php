@@ -8,7 +8,7 @@ class Shortcode extends AbstractPluginController {
 
     public function init_front() {
         add_action( 'wizzaro_gallery_after_register_post_types', array( $this, 'action_init_shordcode' ), 10, 1 );
-        add_action( 'wp_enqueue_scripts', array( $this, 'action_enqueue_style' ) );
+        add_action( 'init', array( $this, 'action_register_style' ) );
     }
 
     public function init_admin() {
@@ -18,8 +18,8 @@ class Shortcode extends AbstractPluginController {
     //----------------------------------------------------------------------------------------------------
     // Functions for front
 
-    public function action_enqueue_style() {
-        wp_enqueue_style( 'wizzaro-slider', $this->_config->get_css_url() . 'slider.css', array(), '1.0.0' );
+    public function action_register_style() {
+        wp_register_style( 'wizzaro-slider', $this->_config->get_css_url() . 'slider.css', array(), '1.0.0' );
     }
 
     public function action_init_shordcode( $post_types_settings ) {
@@ -33,6 +33,7 @@ class Shortcode extends AbstractPluginController {
             $post = get_post( $attrs['id'] );
 
             if ( $post  && $post->post_type && $post->post_type ===  $this->_config->get( 'post_type', 'type' ) ) {
+                wp_enqueue_style( 'wizzaro-slider' );
                 wp_enqueue_script( 'wizzaro-slider', $this->_config->get_js_url() . 'slider.js', array( 'jquery' ), '1.0.0' , true );
 
                 $settings = $this->_config->get( 'carousel', 'default_settings' );

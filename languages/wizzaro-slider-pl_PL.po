@@ -1,0 +1,169 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wizzaro Slider\n"
+"POT-Creation-Date: 2017-05-16 14:20+0200\n"
+"PO-Revision-Date: 2017-05-16 14:29+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: wizzaro-slider.php\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: assets/js/admin/tinymce/langs/wizzaro_sliders.php:16
+msgid "Add slider"
+msgstr "Dodaj slider"
+
+#: assets/js/admin/tinymce/langs/wizzaro_sliders.php:17
+#: config/plugin.config.php:36
+msgid "Slider"
+msgstr ""
+
+#: assets/js/admin/tinymce/langs/wizzaro_sliders.php:18
+msgid "Use Arrow Navigation"
+msgstr "Użyj strzałek do nawigacji"
+
+#: assets/js/admin/tinymce/langs/wizzaro_sliders.php:19
+msgid "Use Bullets Navigation"
+msgstr ""
+
+#: config/plugin.config.php:35 config/plugin.config.php:37
+msgid "Sliders"
+msgstr ""
+
+#: config/plugin.config.php:38
+msgid "Add Slider"
+msgstr "Dodaj slider"
+
+#: config/plugin.config.php:39
+msgid "Add New Slider"
+msgstr "Dodaj Nowy Slider"
+
+#: config/plugin.config.php:40 config/plugin.config.php:41
+msgid "Edit Slider"
+msgstr "Edytuj Slider"
+
+#: config/plugin.config.php:42
+msgid "New Slider"
+msgstr "Nowy Slider"
+
+#: config/plugin.config.php:43
+msgid "No Sliders found"
+msgstr "Żaden Slider nie istnieje"
+
+#: config/plugin.config.php:44
+msgid "No Sliders found in trash"
+msgstr "Nie znaleziono żadnego Slidera w koszu"
+
+#: src/Component/Metabox/Settings.php:15
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: src/Component/Metabox/Shortcode.php:14
+msgid "Slider Shortcode"
+msgstr ""
+
+#: src/Component/Metabox/Slides.php:21
+msgid "Slider Slids"
+msgstr "Slajdy"
+
+#: src/Component/Metabox/Slides.php:35
+msgid "Are you sure you want to delete these elements?"
+msgstr "Czy na pewno chcesz usunąć te elementy?"
+
+#: src/Component/Metabox/Slides.php:36
+msgid "Are you sure you want to delete this element?"
+msgstr "Czy na pewno chcesz usunąć ten element?"
+
+#: src/Controller/PostType.php:53
+msgid "Slider image size"
+msgstr ""
+
+#: src/Controller/Shortcode.php:80
+msgid "Shortcode"
+msgstr ""
+
+#: vendor/wizzaro/wordpress-framework-v1/src/Views/settings-page/fields/admin-field-wp-page.php:2
+msgid "----"
+msgstr ""
+
+#: view/wizzaro/slider/component/metabox/settings/metabox.php:8
+msgid "Interval (ms)"
+msgstr "Interwał (ms)"
+
+#: view/wizzaro/slider/component/metabox/settings/metabox.php:19
+msgid "Pause on hover slider"
+msgstr "Pauza po najechaniu kursorem"
+
+#: view/wizzaro/slider/component/metabox/settings/metabox.php:23
+msgid "Yes"
+msgstr "Tak"
+
+#: view/wizzaro/slider/component/metabox/settings/metabox.php:27
+msgid "No"
+msgstr "Nie"
+
+#: view/wizzaro/slider/component/metabox/slides/js-templates.php:11
+#: view/wizzaro/slider/component/metabox/slides/metabox.php:43
+msgid "Set image"
+msgstr "Wstaw obraz"
+
+#: view/wizzaro/slider/component/metabox/slides/js-templates.php:30
+#: view/wizzaro/slider/component/metabox/slides/metabox.php:25
+msgid "No slides to display"
+msgstr "Brak slajdów do wyświetlenia"
+
+#: view/wizzaro/slider/component/metabox/slides/metabox.php:8
+#: view/wizzaro/slider/component/metabox/slides/metabox.php:72
+msgid "Add Slide"
+msgstr "Dodaj slajd"
+
+#: view/wizzaro/slider/component/metabox/slides/metabox.php:9
+#: view/wizzaro/slider/component/metabox/slides/metabox.php:73
+msgid "Remove selected slides"
+msgstr "Usuń wybrane slajdy"
+
+#: view/wizzaro/slider/component/metabox/slides/metabox.php:13
+#: view/wizzaro/slider/component/metabox/slides/metabox.php:64
+msgid "Select all"
+msgstr "Zaznacz wszytsko"
+
+#: view/wizzaro/slider/component/metabox/slides/metabox.php:17
+#: view/wizzaro/slider/component/metabox/slides/metabox.php:68
+msgid "Unselect all"
+msgstr "Odznacz wszystkio"
+
+#: view/wizzaro/slider/controller/shortcode/shordcode.php:48
+msgid "Prev"
+msgstr "Poprzedni"
+
+#: view/wizzaro/slider/controller/shortcode/shordcode.php:51
+msgid "Next"
+msgstr "Następny"
+
+#. Plugin Name of the plugin/theme
+msgid "Wizzaro Slider"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "This is plugin for create slider post type"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Przemysław Dziadek"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.wizzaro.com"
+msgstr ""

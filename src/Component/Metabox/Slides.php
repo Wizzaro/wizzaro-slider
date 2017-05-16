@@ -88,7 +88,7 @@ class Slides extends AbstractMetabox {
                 if ( is_array( $slide ) && isset( $slide['image_id'] ) && is_string( $slide['image_id'] ) && isset( $slide['content'] ) && is_string( $slide['content'] ) ) {
                     $slide = array(
                         'image_id' => $filter_instance->filter_int( $slide['image_id'] ),
-                        'content' => $filter_instance->filter_text( $slide['content'] )
+                        'content' => nl2br( strip_tags( $slide['content'] ) )
                     );
 
                     if ( $slide['image_id'] > 0 && wp_attachment_is_image( $slide['image_id'] ) ) {

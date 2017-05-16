@@ -30,7 +30,7 @@ if ( $totalSlides > 0 ) {
                     if ( mb_strlen( $slide['content'] ) > 0 ) {
                         ?>
                         <div class="ws-caption">
-                            <?php echo esc_attr( $slide['content'] ); ?>
+                            <?php echo $slide['content']; ?>
                         </div>
                         <?php
                     }

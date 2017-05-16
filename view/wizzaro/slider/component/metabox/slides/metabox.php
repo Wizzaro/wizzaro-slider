@@ -45,7 +45,7 @@ wp_nonce_field('wizzaro_slider_slides_edit_nounce', 'wizzaro_slider_slides_edit'
                                     <input type="hidden" name="wizzaro-slider-slides[<?php echo $unique_id; ?>][image_id]" value="<?php echo esc_attr( $element['image_id'] ); ?>">
                                 </div>
                                 <div class="wsms-l-e-content">
-                                    <textarea name="wizzaro-slider-slides[<?php echo $unique_id; ?>][content]"><?php echo esc_attr( $element['content'] ); ?></textarea>
+                                    <textarea name="wizzaro-slider-slides[<?php echo $unique_id; ?>][content]"><?php echo str_ireplace(array("<br />","<br>","<br/>"), "", $element['content']); ?></textarea>
                                 </div>
                                 <div class="wsms-l-e-actions">
                                     <a href="#" href="#" class="wsms-action-delete">

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wizzaro Slider\n"
-"POT-Creation-Date: 2017-05-16 14:20+0200\n"
-"PO-Revision-Date: 2017-05-16 14:29+0200\n"
+"POT-Creation-Date: 2017-05-16 20:07+0200\n"
+"PO-Revision-Date: 2017-05-16 20:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl_PL\n"
@@ -26,7 +26,7 @@ msgid "Add slider"
 msgstr "Dodaj slider"
 
 #: assets/js/admin/tinymce/langs/wizzaro_sliders.php:17
-#: config/plugin.config.php:36
+#: config/plugin.config.php:38
 msgid "Slider"
 msgstr ""
 
@@ -38,31 +38,31 @@ msgstr "Użyj strzałek do nawigacji"
 msgid "Use Bullets Navigation"
 msgstr ""
 
-#: config/plugin.config.php:35 config/plugin.config.php:37
+#: config/plugin.config.php:37 config/plugin.config.php:39
 msgid "Sliders"
 msgstr ""
 
-#: config/plugin.config.php:38
+#: config/plugin.config.php:40
 msgid "Add Slider"
 msgstr "Dodaj slider"
 
-#: config/plugin.config.php:39
+#: config/plugin.config.php:41
 msgid "Add New Slider"
 msgstr "Dodaj Nowy Slider"
 
-#: config/plugin.config.php:40 config/plugin.config.php:41
+#: config/plugin.config.php:42 config/plugin.config.php:43
 msgid "Edit Slider"
 msgstr "Edytuj Slider"
 
-#: config/plugin.config.php:42
+#: config/plugin.config.php:44
 msgid "New Slider"
 msgstr "Nowy Slider"
 
-#: config/plugin.config.php:43
+#: config/plugin.config.php:45
 msgid "No Sliders found"
 msgstr "Żaden Slider nie istnieje"
 
-#: config/plugin.config.php:44
+#: config/plugin.config.php:46
 msgid "No Sliders found in trash"
 msgstr "Nie znaleziono żadnego Slidera w koszu"
 
@@ -99,20 +99,30 @@ msgid "----"
 msgstr ""
 
 #: view/wizzaro/slider/component/metabox/settings/metabox.php:8
-msgid "Interval (ms)"
-msgstr "Interwał (ms)"
+msgid "Autoplay"
+msgstr "Autoplay"
 
-#: view/wizzaro/slider/component/metabox/settings/metabox.php:19
-msgid "Pause on hover slider"
-msgstr "Pauza po najechaniu kursorem"
-
-#: view/wizzaro/slider/component/metabox/settings/metabox.php:23
+#: view/wizzaro/slider/component/metabox/settings/metabox.php:12
+#: view/wizzaro/slider/component/metabox/settings/metabox.php:50
 msgid "Yes"
 msgstr "Tak"
 
-#: view/wizzaro/slider/component/metabox/settings/metabox.php:27
+#: view/wizzaro/slider/component/metabox/settings/metabox.php:16
+#: view/wizzaro/slider/component/metabox/settings/metabox.php:54
 msgid "No"
 msgstr "Nie"
+
+#: view/wizzaro/slider/component/metabox/settings/metabox.php:24
+msgid "Interval (ms)"
+msgstr "Interwał (ms)"
+
+#: view/wizzaro/slider/component/metabox/settings/metabox.php:35
+msgid "Animation Speed (ms)"
+msgstr "Szybkość animacji (ms)"
+
+#: view/wizzaro/slider/component/metabox/settings/metabox.php:46
+msgid "Pause on hover slider"
+msgstr "Pauza po najechaniu kursorem"
 
 #: view/wizzaro/slider/component/metabox/slides/js-templates.php:11
 #: view/wizzaro/slider/component/metabox/slides/metabox.php:43
@@ -144,14 +154,6 @@ msgstr "Zaznacz wszytsko"
 msgid "Unselect all"
 msgstr "Odznacz wszystkio"
 
-#: view/wizzaro/slider/controller/shortcode/shordcode.php:48
-msgid "Prev"
-msgstr "Poprzedni"
-
-#: view/wizzaro/slider/controller/shortcode/shordcode.php:51
-msgid "Next"
-msgstr "Następny"
-
 #. Plugin Name of the plugin/theme
 msgid "Wizzaro Slider"
 msgstr ""
@@ -167,3 +169,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://www.wizzaro.com"
 msgstr ""
+
+#~ msgid "Prev"
+#~ msgstr "Poprzedni"
+
+#~ msgid "Next"
+#~ msgstr "Następny"

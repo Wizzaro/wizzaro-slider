@@ -30,7 +30,7 @@ jQuery( document ).ready( function( $ ) {
 
 
         slider.slick({
-            autoplay: false,//true,
+            autoplay: true,
             arrows: useArrows,
             dots: useBullets,
             pauseOnHover: pauseOnHover,

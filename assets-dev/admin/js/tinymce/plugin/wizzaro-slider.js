@@ -42,7 +42,7 @@
                     }
                 ],
                 onsubmit: function( e ) {
-                    var content = '[' + shortcode_tag + ' slider_id="' + e.data.slider_id + '" use_arrows="';
+                    var content = '[' + shortcode_tag + ' id="' + e.data.slider_id + '" use_arrows="';
 
                     if ( e.data.use_arrows === true ) {
                         content += '1';

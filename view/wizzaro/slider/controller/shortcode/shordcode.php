@@ -2,7 +2,7 @@
 $totalSlides = count( $view_data['slides'] );
 if ( $totalSlides > 0 ) {
     $slider_id = 'wizzaro-slider-' . $view_data['unique_id'];
-    $autoplay = ( ! isset( $view_data['attrs']['autoplay'] ) || $view_data['attrs']['autoplay'] == '1' );
+    $autoplay = ( ! isset( $view_data['settings']['autoplay'] ) || $view_data['settings']['autoplay'] == '1' );
     $use_arrows = ( ! isset( $view_data['attrs']['use_arrows'] ) || $view_data['attrs']['use_arrows'] == '1' );
     $use_bullets = ( ! isset( $view_data['attrs']['use_bullets'] ) || $view_data['attrs']['use_bullets'] == '1' );
     ?>

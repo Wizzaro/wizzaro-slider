@@ -30,7 +30,7 @@ return array(
         'post_type' => array(
             'type' => 'wizzaro-slider',
             'args' => array(
-                'public' => true,
+                'public' => false,
                 'labels'=> array(
                     'name'                  => __( 'Sliders', 'wizzaro-slider' ),
                     'singular_name'         => __( 'Slider', 'wizzaro-slider' ),

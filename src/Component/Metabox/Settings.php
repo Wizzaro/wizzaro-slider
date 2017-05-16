@@ -56,13 +56,31 @@ class Settings extends AbstractMetabox {
             $filter_instance = Filter::get_instance();
             $new_settings = $_POST['wizzaro_slider_settings'];
 
-            if ( isset( $new_settings['interval'] ) ) {
-                $pause_betwen_transition = $filter_instance->filter_int( $new_settings['interval'] );
+            if ( isset( $new_settings['autoplay'] ) ) {
+                if ( ! strcasecmp( $new_settings['autoplay'], '1' ) ) {
+                    $settings['autoplay'] = 1;
+                } else {
+                    $settings['autoplay'] = 0;
+                }
+            }
 
-                if (is_int( $pause_betwen_transition ) && $pause_betwen_transition >= 0 ) {
-                    $settings['interval'] = $pause_betwen_transition;
+            if ( isset( $new_settings['interval'] ) ) {
+                $interval = $filter_instance->filter_int( $new_settings['interval'] );
+
+                if (is_int( $interval ) && $interval >= 0 ) {
+                    $settings['interval'] = $interval;
                 } else {
                     $settings['interval'] = 4000;
+                }
+            }
+
+            if ( isset( $new_settings['animation_speed'] ) ) {
+                $animation_speed = $filter_instance->filter_int( $new_settings['animation_speed'] );
+
+                if (is_int( $animation_speed ) && $animation_speed >= 0 ) {
+                    $settings['animation_speed'] = $animation_speed;
+                } else {
+                    $settings['animation_speed'] = 300;
                 }
             }
 

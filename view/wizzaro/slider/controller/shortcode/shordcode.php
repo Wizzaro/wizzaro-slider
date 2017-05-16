@@ -2,10 +2,11 @@
 $totalSlides = count( $view_data['slides'] );
 if ( $totalSlides > 0 ) {
     $slider_id = 'wizzaro-slider-' . $view_data['unique_id'];
+    $autoplay = ( ! isset( $view_data['attrs']['autoplay'] ) || $view_data['attrs']['autoplay'] == '1' );
     $use_arrows = ( ! isset( $view_data['attrs']['use_arrows'] ) || $view_data['attrs']['use_arrows'] == '1' );
     $use_bullets = ( ! isset( $view_data['attrs']['use_bullets'] ) || $view_data['attrs']['use_bullets'] == '1' );
     ?>
-    <div id="<?php echo $slider_id; ?>" class="wizzaro-slider slide" role="listbox" data-ride="wizzaro-slider" data-interval="<?php echo esc_attr( $view_data['settings']['interval'] ); ?>" data-pause-on-hover="<?php echo $view_data['settings']['pause_on_hover'] == 1 ? 'hover' : 'false' ?>" data-use-arrows="<?php echo $use_arrows ? '1' : '0'; ?>" data-use-bullets="<?php echo $use_bullets ? '1' : '0'; ?>">
+    <div id="<?php echo $slider_id; ?>" class="wizzaro-slider slide" role="listbox" data-autoplay="<?php echo $autoplay ? '1' : '0'; ?>" data-interval="<?php echo esc_attr( $view_data['settings']['interval'] ); ?>" data-animation-speed="<?php echo esc_attr( $view_data['settings']['animation_speed'] ); ?>" data-pause-on-hover="<?php echo $view_data['settings']['pause_on_hover'] == 1 ? '1' : '0' ?>" data-use-arrows="<?php echo $use_arrows ? '1' : '0'; ?>" data-use-bullets="<?php echo $use_bullets ? '1' : '0'; ?>">
         <?php
         $first = true;
         foreach ( $view_data['slides'] as $slide ) {

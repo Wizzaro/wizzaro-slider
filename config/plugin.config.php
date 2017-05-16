@@ -23,7 +23,9 @@ return array(
         ),
         'carousel' => array(
             'default_settings' => array(
+                'autoplay' => 1,
                 'interval' => 4000,
+                'animation_speed' => 300,
                 'pause_on_hover' => 0
             )
         ),

@@ -1,13 +1,25 @@
 jQuery( document ).ready( function( $ ) {
     $('.wizzaro-slider').each(function() {
         var slider = $(this);
-        var interval = slider.attr('data-interval'),
+        var autoplay = slider.attr('data-autoplay'),
+            interval = slider.attr('data-interval'),
+            animationSpeed = slider.attr('data-animation-speed'),
             pauseOnHover = slider.attr('data-pause-on-hover'),
             useArrows = slider.attr('data-use-arrows'),
             useBullets = slider.attr('data-use-bullets');
 
+        if ( autoplay == '1' ) {
+            autoplay = true;
+        } else {
+            autoplay = false;
+        }
+
         if ( ! interval ) {
             interval = 4000;
+        }
+
+        if ( ! animationSpeed ) {
+            animationSpeed = 300;
         }
 
         if ( pauseOnHover == '1' ) {
@@ -30,11 +42,12 @@ jQuery( document ).ready( function( $ ) {
 
 
         slider.slick({
-            autoplay: true,
+            autoplay: autoplay,
             arrows: useArrows,
             dots: useBullets,
             pauseOnHover: pauseOnHover,
             autoplaySpeed: interval,
+            speed: animationSpeed
         });
     });
 });
